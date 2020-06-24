@@ -17,6 +17,8 @@
         </div>
         {% endfor %}
       </div>
-
+      <div class="row mt-5 pagin">
+        {{ knp_pagination_render(articles) }}
+      </div>
   </div>
 {% endblock %}
