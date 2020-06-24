@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail - {{article.name}}{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h1 class="text-center">Détail - {{article.name}}</h1>
+    <div class="row mt-4 text-center">
+      <div class="col-12">
+        <h3 class="title">{{article.name}}</h3>
+        <p class="">{{article.description}}</p>
+        <p>Référence {{article.reference}}</p>
+        <p>Quantité : {{article.quantity}}</p>
+        <p>Marque : {{article.marque.name}}</p>
+        <p>Categories :
+          {% for category in article.category  %}
+            {{category.name}} /<span><span>
+          {% endfor %}
+        </p>
+        <a class="btn btn-info" href="{{path('home')}}"  role="button">Liste des articles</a>
+        <a class="btn btn-info" href="{{path('edit_article', {id: article.id})}}" role="button">Édition de l'article</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

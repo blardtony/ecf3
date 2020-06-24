@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h1 class="text-center">Liste des articles</h1>
+
+      <div class="row mt-4 text-center">
+        {% for article in articles %}
+        <div class="col-lg-6 col-md-12 mt-5">
+          <h3 class="title">{{article.name}}</h3>
+          <p class="">{{article.description}}</p>
+          <p>Quantité : {{article.quantity}}</p>
+          <a class="btn btn-info" href="{{path('detail_article', {id: article.id})}}" role="button">Détail de l'article</a>
+          <a class="btn btn-info" href="{{path('edit_article', {id: article.id})}}" role="button">Édition de l'article</a>
+        </div>
+        {% endfor %}
+      </div>
+
+  </div>
+{% endblock %}
