@@ -6,6 +6,11 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         {% block stylesheets %}{% endblock %}
+        <style media="screen">
+          footer {
+            margin-top: auto;
+          }
+        </style>
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,7 +27,7 @@
         </div>
       </nav>
         {% block body %}{% endblock %}
-        <footer>
+        <footer class="page-footer mt-auto">
          <div class="footer-copyright text-center py-3 bg-dark text-white mt-5">
            Tony Blard  © 2020 Copyright
          </div>
